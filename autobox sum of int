@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class SumOfIntegers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        System.out.print("Enter numbers separated by spaces: ");
+        String input = sc.nextLine();
+
+        String[] parts = input.split(" ");
+
+        for (String s : parts) {
+            // String Parsing: converting string to int, then autoboxing to Integer
+            Integer num = Integer.parseInt(s);
+            numbers.add(num);
+        }
+
+        int sum = 0;
+        // Unboxing: Integer objects automatically converted to int
+        for (int n : numbers) {
+            sum += n;
+        }
+
+        System.out.println("Sum of integers: " + sum);
+        sc.close();
+    }
+}
